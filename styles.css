@@ -1,0 +1,244 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 56px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---Nav--- */
+
+.navbar {
+  text-transform: uppercase;
+}
+
+.navbar-scrolled {
+  background-color: #444;
+  transition: background-color 500ms;
+}
+
+nav .container {
+  max-width: 85%;
+}
+
+.nav-link {
+  position: relative;
+  padding: 0.5em 0;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: white;
+  cursor: pointer;
+}
+
+/* ---Hero--- */
+
+.hero {
+  height: 100vh;
+  background-color: #288f9b;
+  background-image: url(img/lago.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 4rem;
+  color: violet;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  font-size: 2rem;
+  color: orange;
+}
+
+/* ---About us--- */
+
+.about_us {
+  padding: 4em 2em;
+  background: rgb(255, 191, 166);
+}
+
+.about_us img {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.section-title,
+.quienes_somos__content,
+.que_ofrecemos__content {
+  color: rgb(37, 4, 90);
+  text-shadow: 2px 2px 5px rgba(109, 0, 172, 0.5);
+  text-align: center;
+}
+
+.quienes_somos,
+.que_ofrecemos,
+.carousel {
+  margin: 0 auto;
+  display: grid;
+  text-align: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.que_ofrecemos {
+  margin-top: 2em;
+}
+
+/* ---Gallery--- */
+
+.gallery {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+#carouselExampleCaptions {
+  padding: 1em 0;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* padding: 1.5em 0.5em; */
+  border-radius: 20px;
+}
+
+.carousel-caption p {
+  margin-bottom: 0;
+}
+
+/* ---Destinations--- */
+
+.our-destinations {
+  padding: 4em 2em;
+  background-color: #eee;
+}
+
+.destinations {
+  display: grid;
+  justify-items: center;
+  padding-top: 1em;
+}
+
+.destiny {
+  display: grid;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  background-color: #ccc;
+}
+
+.destiny + .destiny {
+  margin-top: 2em;
+}
+
+.destiny img {
+  width: 100%;
+}
+
+.destiny-body {
+  padding: 1em 0;
+}
+
+.destiny a {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+
+/* ---Footer--- */
+
+footer {
+  background-color: #3b4050;
+  text-align: center;
+}
+
+footer .social-media {
+  padding: 1em;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer .bi {
+  margin: 0 1em;
+}
+
+footer p {
+  margin-bottom: 0;
+  padding-bottom: 1em;
+  color: white;
+}
+
+/* ---Media Queries--- */
+
+@media (min-width: 992px) {
+  .nav-link {
+    padding: 0;
+  }
+  .nav-link::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: -0.2em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform 250ms ease-in-out;
+  }
+
+  .nav-link:hover::before {
+    transform: scale(1, 1);
+  }
+
+  .nav-link + .nav-link {
+    margin-left: 2em;
+  }
+
+  .quienes_somos,
+  .que_ofrecemos {
+    grid-template-columns: 1fr 1fr;
+    max-width: 1100px;
+    gap: 3em;
+  }
+
+  .destinations {
+    grid-template-columns: 1fr 1fr;
+    gap: 3em;
+  }
+
+  .destiny + .destiny {
+    margin-top: 0;
+  }
+}
