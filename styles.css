@@ -1,3 +1,12 @@
+:root {
+  --ff-primary: 'Nunito', sans-serif;
+  --ff-secondary: 'Raleway', sans-serif;
+  --bg-light: #f3df95;
+  --bg-medium: rgba(255, 125, 3, 0.8);
+  --bg-dark: rgb(104, 1, 99);
+  --bg-darker: rgb(71, 1, 68);
+}
+
 *,
 *::before,
 *::after {
@@ -5,7 +14,7 @@
 }
 
 html {
-  scroll-padding-top: 56px;
+  scroll-padding-top: 216px;
 }
 
 body {
@@ -17,12 +26,6 @@ img {
   max-width: 100%;
 }
 
-.container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 /* ---Nav--- */
 
 .navbar {
@@ -30,12 +33,12 @@ img {
 }
 
 .navbar-scrolled {
-  background-color: #444;
+  background-color: var(--bg-darker);
   transition: background-color 500ms;
 }
 
 nav .container {
-  max-width: 85%;
+  max-width: 90%;
 }
 
 .nav-link {
@@ -53,57 +56,82 @@ nav .container {
 
 .hero {
   height: 100vh;
-  background-color: #288f9b;
-  background-image: url(img/lago.jpg);
+  background-color: #b45405;
+  background-image: url(img/caroya-picada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
   display: flex;
   align-items: center;
-}
-
-.hero .container {
   text-align: center;
 }
 
 .hero__title {
-  font-size: 4rem;
-  color: violet;
+  font-size: 3rem;
+  color: white;
   text-transform: uppercase;
+  font-family: var(--ff-secondary);
+  text-shadow: 3px 3px 3px white;
 }
 
 .hero__subtitle {
-  font-size: 2rem;
-  color: orange;
+  font-size: 1.7rem;
+  color: var(--bg-light);
+  font-family: var(--ff-secondary);
+  font-style: italic;
+}
+
+/* ---Header--- */
+
+.header {
+  height: 100px;
+  background: linear-gradient(var(--bg-light), var(--bg-medium));
+}
+
+/* ---Main--- */
+
+main {
+  background: linear-gradient(var(--bg-medium), var(--bg-dark));
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* ---About us--- */
 
 .about_us {
-  padding: 4em 2em;
-  background: rgb(255, 191, 166);
+  padding: 0 2em;
+  color: var(--bg-dark);
+  position: relative;
 }
 
 .about_us img {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+}
+
+.about_us h2 {
+  font-family: var(--ff-primary);
+  color: var(--bg-darker);
+  font-size: 2.2rem;
+}
+
+.about_us p {
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .section-title,
 .quienes_somos__content,
 .que_ofrecemos__content {
-  color: rgb(37, 4, 90);
-  text-shadow: 2px 2px 5px rgba(109, 0, 172, 0.5);
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .quienes_somos,
-.que_ofrecemos,
-.carousel {
+.que_ofrecemos {
   margin: 0 auto;
   display: grid;
   text-align: center;
   align-items: center;
-  max-width: 600px;
 }
 
 .que_ofrecemos {
@@ -113,70 +141,252 @@ nav .container {
 /* ---Gallery--- */
 
 .gallery {
-  padding: 4em 2em;
+  padding: 5em 2em;
+}
+
+.section-title {
+  color: white;
   text-align: center;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
 }
 
-#carouselExampleCaptions {
-  padding: 1em 0;
+.gallery-title {
+  font-family: var(--ff-primary);
 }
 
-.carousel-caption {
-  background-color: rgba(0, 0, 0, 0.6);
-  /* padding: 1.5em 0.5em; */
-  border-radius: 20px;
+.yellow {
+  color: #ffc600;
 }
 
-.carousel-caption p {
-  margin-bottom: 0;
+.images {
+  display: grid;
+  gap: 20px;
+  height: 80vh;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.image.medium {
+  grid-row: span 2;
+  grid-column: span 3;
+}
+
+.image.large {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+.image.small {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.image.tall {
+  grid-row: span 3;
+  grid-column: span 2;
+}
+
+.image.wide {
+  grid-row: span 3;
+  grid-column: span 3;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-1 {
+  background-image: url(img/caroya.jpg);
+}
+
+.image-2 {
+  background-image: url(img/caroya-capilla.jpg);
+}
+
+.image-3 {
+  background-image: url(img/merlo.jpg);
+}
+
+.image-4 {
+  background-image: url(img/grupal.jpg);
+}
+
+.image-5 {
+  background-image: url(img/caroya-picada.jpg);
+}
+
+.image-6 {
+  background-image: url(img/termas.jpg);
+}
+
+.image {
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  transition: color 1000ms ease;
+  transition: background-color 1000ms ease;
+}
+
+.image:hover {
+  background-color: transparent;
+  color: transparent;
+  cursor: pointer;
+}
+
+.illuminated {
+  background-color: transparent;
+  color: transparent;
 }
 
 /* ---Destinations--- */
 
 .our-destinations {
   padding: 4em 2em;
-  background-color: #eee;
 }
 
 .destinations {
   display: grid;
-  justify-items: center;
-  padding-top: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.destinations-title {
+  font-family: var(--ff-secondary);
 }
 
 .destiny {
-  display: grid;
-  justify-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  background-color: #ccc;
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+  color: white;
+  background-size: cover;
+  padding: 10rem 0 0;
+  margin: 0 auto;
+  max-width: 35ch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 500ms ease;
 }
 
-.destiny + .destiny {
-  margin-top: 2em;
+.destiny:hover,
+.destiny:focus-within {
+  transform: scale(1.05);
 }
 
-.destiny img {
-  width: 100%;
+.destiny-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(hsl(0 0% 0% / 0), hsl(0 0% 0% / 0.5) 20%, hsl(0 0% 0% / 1));
+}
+
+.destiny-title {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  padding-bottom: 0.5em;
+}
+
+.destiny-title::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  left: calc(var(--padding) * -1);
+  bottom: -2px;
+  width: calc(100% + var(--padding));
+  background-color: hsl(142, 90%, 61%);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+.destiny:hover .destiny-title::after,
+.destiny:focus-within .destiny-title::after {
+  transform: scaleX(1);
 }
 
 .destiny-body {
-  padding: 1em 0;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.destiny a {
+@media (hover) {
+  .destiny-content {
+    transform: translateY(65%);
+    transition: transform 500ms ease;
+  }
+
+  .destiny:hover .destiny-content,
+  .destiny:focus-within .destiny-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
+
+  .destiny:focus-within .destiny-content {
+    transition-duration: 0ms;
+  }
+
+  .destiny-content > *:not(.destiny-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+
+  .destiny:hover .destiny-content > *:not(.destiny-title),
+  .destiny:focus-within .destiny-content > *:not(.destiny-title) {
+    opacity: 1;
+    transition-delay: 1000ms;
+  }
+
+  .destiny-title::after {
+    transform: scaleX(0);
+  }
+}
+
+.button {
+  cursor: pointer;
   display: inline-block;
-  padding: 0.3em 1em;
   text-decoration: none;
-  background-color: white;
-  border-radius: 25px;
-  text-transform: uppercase;
+  color: #333;
+  background-color: hsl(142, 90%, 61%);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+}
+
+.button:hover,
+.button:focus {
+  background-color: hsl(0, 0%, 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}
+
+.destiny-caroya {
+  background-image: url(img/caroya.jpg);
+}
+
+.destiny-termas {
+  background-image: url(img/termas.jpg);
+}
+
+.destiny-merlo {
+  background-image: url(img/merlo.jpg);
 }
 
 /* ---Footer--- */
 
 footer {
-  background-color: #3b4050;
+  background: linear-gradient(var(--bg-dark), black);
   text-align: center;
 }
 
@@ -201,9 +411,14 @@ footer p {
 /* ---Media Queries--- */
 
 @media (min-width: 992px) {
+  html {
+    scroll-padding-top: 56px;
+  }
+
   .nav-link {
     padding: 0;
   }
+
   .nav-link::before {
     content: '';
     display: block;
@@ -226,6 +441,34 @@ footer p {
     margin-left: 2em;
   }
 
+  .hero__title {
+    font-size: 5rem;
+    text-shadow: 5px 5px 3px white;
+  }
+
+  .hero__subtitle {
+    font-size: 2rem;
+  }
+
+  .about_us-container {
+    position: static;
+    margin-bottom: 100px;
+  }
+
+  .about_us h2 {
+    font-size: 2.7rem;
+  }
+
+  .about_us p {
+    font-size: 1.3rem;
+  }
+
+  .section-title,
+  .quienes_somos__content,
+  .que_ofrecemos__content {
+    max-width: 800px;
+  }
+
   .quienes_somos,
   .que_ofrecemos {
     grid-template-columns: 1fr 1fr;
@@ -233,12 +476,36 @@ footer p {
     gap: 3em;
   }
 
-  .destinations {
-    grid-template-columns: 1fr 1fr;
-    gap: 3em;
+  .gallery {
+    padding: 2em 2em;
   }
 
-  .destiny + .destiny {
-    margin-top: 0;
+  .section-title {
+    font-size: 3rem;
+  }
+
+  .image.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+  }
+
+  .image.large {
+    grid-row: span 3;
+    grid-column: span 3;
+  }
+
+  .image.small {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+
+  .image.tall {
+    grid-row: span 3;
+    grid-column: span 2;
+  }
+
+  .image.wide {
+    grid-row: span 2;
+    grid-column: span 3;
   }
 }
